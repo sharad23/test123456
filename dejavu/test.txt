@@ -1,0 +1,5 @@
+CREATE OR REPLACE RULE ignore_duplicate_inserts AS
+   ON INSERT TO fingerprints
+   WHERE (EXISTS ( SELECT *
+           FROM fingerprints
+          WHERE fingerprints.hash = NEW.hash and fingerprints.ofset = NEW.ofset and fingerprints.song_id = NEW.song_id )) DO INSTEAD NOTHING;

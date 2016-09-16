@@ -1,0 +1,12 @@
+{
+    "database":{
+        "host": "localhost",
+        "user": "dejavu2",
+        "passwd": "dejavu2",
+        "db": "dejavu2"
+    },
+    "database_type": "pgsql",
+    "SAMPLING_RATE": 44100,
+    "confidence_freq": 80,
+    "local_maxima_freq": 10
+}
