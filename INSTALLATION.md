@@ -1,4 +1,4 @@
-# Installation of Dejavu
+# Installation 
 
 So far Dejavu has only been tested on Unix systems.
 
@@ -16,48 +16,23 @@ For installing `ffmpeg` on Mac OS X, I highly recommend [this post](http://junge
 
 ### Dependency installation on Fedora 20+
 
-Install the dependencies:
+1.Install the dependencies:
 
     sudo yum install numpy scipy python-matplotlib ffmpeg portaudio-devel
     pip install PyAudio
     pip install pydub
+    pip install ffmpy
+    pip install psycopg2
     
-Now setup virtualenv ([howto?](http://www.pythoncentral.io/how-to-install-virtualenv-python/)):
+2.For database: 
+    
+    1.Pgsql only supported:
+    2.create a database manually for example: shazam
+    3.At the begining comment the code  in dejavu/__init__.py line no 46.
+    4.Execute " python dejavu/truncate.py " on shell , will create the tables for you
+    5.Uncomment the code  in dejavu/__init__.py line no 46.
 
-    pip install virtualenv
-    virtualenv --system-site-packages env_with_system
-
-Install from PyPI:
-
-    source env_with_system/bin/activate
-    pip install PyDejavu
+    
+    
 
 
-You can also install the latest code from GitHub:
-
-    source env_with_system/bin/activate
-    pip install https://github.com/worldveil/dejavu/zipball/master
-
-## Max OS X
-
-### Dependency installation for Mac OS X
-
-Tested on OS X Mavericks. An option is to install [Homebrew](http://brew.sh) and do the following:
-
-```
-brew install portaudio
-brew install ffmpeg
-
-sudo easy_install pyaudio
-sudo easy_install pydub
-sudo easy_install numpy
-sudo easy_install scipy
-sudo easy_install matplotlib
-sudo easy_install pip
-
-sudo pip install MySQL-python
-
-sudo ln -s /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/lib/libmysqlclient.18.dylib
-```
-
-However installing `portaudio` and/or `ffmpeg` from source is also doable. 
