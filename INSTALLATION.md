@@ -28,6 +28,16 @@ For installing `ffmpeg` on Mac OS X, I highly recommend [this post](http://junge
     
     1.Pgsql only supported:
     2.create a database manually for example: shazam
+        Now your dejavuPgsql.conf becomes : config = {
+                                            ...     "database": {
+                                            ...         "host": "127.0.0.1",
+                                            ...         "user": "root",
+                                            ...         "passwd": "secret", 
+                                            ...         "db": "shazam",
+                                            ...     },
+                                            ...     "database_type" : "mysql",
+                                            ...     "fingerprint_limit" : 10
+                                            ... }
     3.At the begining comment the code  in dejavu/__init__.py line no 46.
     4.Execute " python dejavu/truncate.py " on shell , will create the tables for you
     5.Uncomment the code  in dejavu/__init__.py line no 46.
